@@ -5,7 +5,7 @@ import cv2
 import streamlit as st
 
 class CFG:
-    device = "cuda"
+    device = "cpu"
     seed = 42
     generator = torch.Generator(device).manual_seed(seed)
     image_gen_steps = 35
@@ -38,6 +38,6 @@ st.title("Stable Diffusion AI Image Generator")
 st.markdown("You can generate any number of images by giving prompts...Hope you have a happy day :blush::ok_hand: !")
 prompt = st.text_input("Enter prompt", max_chars=256)
 
-img = generate_image("human face having long black hair, round face little beard ,face complexion fair, gender female, small eyes", image_gen_model)
+img = generate_image(prompt, image_gen_model)
 
 st.image(img)
