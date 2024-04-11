@@ -6,7 +6,7 @@ import streamlit as st
 from huggingface_hub import login
 
 tkn = st.secrets["H_TOKEN"]
-login(token = tkn)
+login(token = tkn, add_to_git_credential = True)
 
 class CFG:
     device = "cpu"
