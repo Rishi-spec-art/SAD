@@ -3,3 +3,4 @@ diffusers
 torch
 opencv-python-headless
 streamlit
+accelerate
