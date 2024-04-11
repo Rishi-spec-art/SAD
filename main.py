@@ -16,7 +16,7 @@ class CFG:
     prompt_dataset_size = 6
     prompt_max_length = 12
     
-token = st.secrets("H_TOKEN")
+token = st.secrets["H_TOKEN"]
 image_gen_model = StableDiffusionPipeline.from_pretrained(
     CFG.image_gen_model_id, torch_dtype=torch.float16,
     revision="fp16", use_auth_token=token, guidance_scale=9
