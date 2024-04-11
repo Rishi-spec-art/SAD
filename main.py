@@ -22,7 +22,7 @@ class CFG:
     
 token = st.secrets["H_TOKEN"]
 image_gen_model = StableDiffusionPipeline.from_pretrained(
-    CFG.image_gen_model_id, torch_dtype=torch.float16,
+    CFG.image_gen_model_id, torch_dtype=torch.float32,
     revision="fp16", guidance_scale=9
 )
 image_gen_model = image_gen_model.to(CFG.device)
